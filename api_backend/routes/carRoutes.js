@@ -1,7 +1,7 @@
 // carRoutes.js
 const express = require('express');
 const router = express.Router();
-const db = require('../../api/config/db');
+const db = require('../config/db');
 
 // Get cars with optional filtering, limit, and offset
 router.get('/carRoutes/cars', (req, res) => {

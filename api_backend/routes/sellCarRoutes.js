@@ -1,7 +1,7 @@
 // sellCarRoutes.js
 const express = require('express');
 const router = express.Router();
-const db = require('../../api/config/db');
+const db = require('../config/db');
 
 // Get all car sales
 router.get('/sell-cars', (req, res) => {

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../../api/config/db'); // Adjust path as necessary
+const db = require('../config/db'); // Adjust path as necessary
 
 // Route to get all employees
 router.get('/employee', (req, res) => {
