@@ -73,11 +73,11 @@ const AboutPage = () => {
         <h2 style={{ fontSize: '20px', fontWeight: 'bold', color: '#007BFF' }}>Contact Us</h2>
         <p style={{ display: 'flex', alignItems: 'center', fontSize: '16px', color: '#555' }}>
           <i className="fas fa-envelope" style={{ marginRight: '8px', color: '#007BFF' }}></i>
-          contact@company.com
+          deelan.vercel.app
         </p>
         <p style={{ display: 'flex', alignItems: 'center', fontSize: '16px', color: '#555' }}>
           <i className="fas fa-phone" style={{ marginRight: '8px', color: '#007BFF' }}></i>
-          +123 456 7890
+          +254758715788 / +254738719696
         </p>
       </div>
 
