@@ -73,7 +73,7 @@ const AboutPage = () => {
         <h2 style={{ fontSize: '20px', fontWeight: 'bold', color: '#007BFF' }}>Contact Us</h2>
         <p style={{ display: 'flex', alignItems: 'center', fontSize: '16px', color: '#555' }}>
           <i className="fas fa-envelope" style={{ marginRight: '8px', color: '#007BFF' }}></i>
-          https://deelankilel.vercel.app/
+          Website: https://deelankilel.vercel.app/
         </p>
         <p style={{ display: 'flex', alignItems: 'center', fontSize: '16px', color: '#555' }}>
           <i className="fas fa-phone" style={{ marginRight: '8px', color: '#007BFF' }}></i>
