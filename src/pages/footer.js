@@ -83,7 +83,7 @@ const Footer = () => {
                         Social Media
                     </Typography>
                     <Link
-                        to="/"
+                        to="/https://deelankilel.vercel.app/"
                         style={{
                             color: '#e0f7fa',
                             textDecoration: 'none',
