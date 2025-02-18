@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient"; // Import the Supabase client
 import { Container, Grid, Card, CardContent, Typography, CircularProgress, Alert, Button } from "@mui/material";
 
-function carsPage() {
+function CarsPage() {
     const [cars, setcars] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -53,4 +53,4 @@ function carsPage() {
     );
 }
 
-export default carsPage;
+export default CarsPage;
