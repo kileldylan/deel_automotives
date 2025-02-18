@@ -110,6 +110,41 @@ const ExploreAllcars = () => {
                   <MenuItem value="Supercar">Supercar</MenuItem>
                 </Select>
               </FormControl>
+              <FormControl fullWidth sx={{ mt: 2 }}>
+                <InputLabel>Price Range</InputLabel>
+                <Select value={priceFilter} onChange={(e) => setPriceFilter(e.target.value)}>
+                  <MenuItem value=""><em>All</em></MenuItem>
+                  <MenuItem value="0-500K">0-500K</MenuItem>
+                  <MenuItem value="500K-1M">500K-1M</MenuItem>
+                  <MenuItem value="1M-2M">1M-2M</MenuItem>
+                  <MenuItem value="2M-3M">2M-3M</MenuItem>
+                  <MenuItem value="3M-5M">3M-5M</MenuItem>
+                  <MenuItem value="5M-10M">5M-10M</MenuItem>
+                  <MenuItem value="10M+">10M+</MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl fullWidth sx={{ mt: 2 }}>
+                <InputLabel>Color</InputLabel>
+                <Select value={colorFilter} onChange={(e) => setColorFilter(e.target.value)}>
+                  <MenuItem value=""><em>All</em></MenuItem>
+                  <MenuItem value="Red">Red</MenuItem>
+                  <MenuItem value="Blue">Blue</MenuItem>
+                  <MenuItem value="Black">Black</MenuItem>
+                  <MenuItem value="White">White</MenuItem>
+                  <MenuItem value="Silver">Silver</MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl fullWidth sx={{ mt: 2 }}>
+                <InputLabel>Year</InputLabel>
+                <Select value={yearFilter} onChange={(e) => setYearFilter(e.target.value)}>
+                  <MenuItem value=""><em>All</em></MenuItem>
+                  <MenuItem value="2025">2025</MenuItem>
+                  <MenuItem value="2024">2024</MenuItem>
+                  <MenuItem value="2023">2023</MenuItem>
+                  <MenuItem value="2022">2022</MenuItem>
+                  <MenuItem value="2021">2021</MenuItem>
+                </Select>
+              </FormControl>
               <Button fullWidth variant="contained" sx={{ mt: 3 }} onClick={handleFilterChange}>
                 Apply Filters
               </Button>
@@ -123,7 +158,7 @@ const ExploreAllcars = () => {
                     <CardMedia
                       component="img"
                       height="200"
-                      image={car.image_url}
+                      image={`${supabaseUrl}/storage/v1/object/public/vehicle-images/${car.image_url}`}
                       alt={car.make}
                     />
                     <CardContent>
