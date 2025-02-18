@@ -29,7 +29,7 @@ const CustomAppBar = () => {
                         Explore Cars
                     </Button>
                     <Menu anchorEl={exploreAnchorEl} open={Boolean(exploreAnchorEl)} onClose={handleExploreClose}>
-                        <MenuItem onClick={handleExploreClose} component={Link} to="/explore-all-vehicles">All Vehicles</MenuItem>
+                        <MenuItem onClick={handleExploreClose} component={Link} to="/explore-all-cars">All cars</MenuItem>
                         <MenuItem onClick={handleExploreClose} component={Link} to="/explore-sedans">Sedans</MenuItem>
                         <MenuItem onClick={handleExploreClose} component={Link} to="/explore-suvs">SUVs</MenuItem>
                         <MenuItem onClick={handleExploreClose} component={Link} to="/explore-trucks">Trucks</MenuItem>

@@ -32,7 +32,7 @@ const Home = () => {
   const navigate = useNavigate();
   const [displayCount, setDisplayCount] = useState(12); // Limit to 12 cards initially
 
-  // Function to fetch data from the Explore Vehicles API
+  // Function to fetch data from the Explore cars API
   const fetchCarData = async () => {
     try {
       const response = await fetch('http://localhost:5000/api/carRoutes/cars'); // Replace with actual API endpoint
@@ -102,7 +102,7 @@ const Home = () => {
     Welcome to Wahome Automotive!
   </Typography>
   <Typography variant="h6" sx={{ color: '#004d40', fontFamily: 'Roboto, sans-serif', mt: 1 }}>
-    Discover premium vehicles and unmatched quality – because you deserve the best on the road.
+    Discover premium cars and unmatched quality – because you deserve the best on the road.
   </Typography>
   <Typography variant="body1" sx={{ color: '#00695c', mt: 2, fontFamily: 'Arial, sans-serif' }}>
     Located at the heart of Mombasa City, 123 Mikindani St, we’re here to bring you closer to your dream ride.

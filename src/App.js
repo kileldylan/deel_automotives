@@ -8,7 +8,7 @@ import ExploreCars from './pages/explore_cars';
 import ExploreSedan from './pages/explore_sedans';
 import ExploreSUV from './pages/explore_suv';
 import ExploreTruck from './pages/explore_trucks';
-import ExploreAllVehicles from './pages/explore_all_vehicles';
+import ExploreAllcars from './pages/explore_all_cars';
 import DealerSale from './pages/DealerSale';
 import FAQ from './pages/FAQ';
 import Contact from './pages/contact';
@@ -16,6 +16,8 @@ import TermsAndConditions from './pages/termsandconditions';
 import PrivacyPolicy from './pages/privacypolicy';
 import CarDetails from './pages/cardetails';
 import FilteredCars from './pages/filteredHhome_cars';
+import { Analytics } from "@vercel/analytics/react"
+
 function App() {
   return (
     <Router>
@@ -26,7 +28,7 @@ function App() {
         <Route path="/explore-suvs" element={<ExploreSUV />} />
         <Route path="/explore-sedans" element={<ExploreSedan />} />
         <Route path="/explore-trucks" element={<ExploreTruck />} />
-        <Route path="/explore-all-vehicles" element={<ExploreAllVehicles />} />
+        <Route path="/explore-all-cars" element={<ExploreAllcars />} />
         <Route path="/DealerSale"element={<DealerSale/>} />
         <Route path="/contact"element={<Contact/>} />
         <Route path="/FAQ"element={<FAQ/>} />
@@ -38,6 +40,8 @@ function App() {
 
         {/* Add additional routes here */}
       </Routes>
+
+      <Analytics />
     </Router>
   );
 }

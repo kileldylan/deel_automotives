@@ -27,8 +27,8 @@ const FAQ = () => {
             answer: "Yes, you can request a quote through our website. Please provide details about the vehicle and the issues you are experiencing for an accurate estimate."
         },
         {
-            question: "What types of vehicles do you service?",
-            answer: "We service a wide range of vehicles, including sedans, SUVs, trucks, and hybrids. Our technicians are trained to work on various brands and models."
+            question: "What types of cars do you service?",
+            answer: "We service a wide range of cars, including sedans, SUVs, trucks, and hybrids. Our technicians are trained to work on various brands and models."
         },
     ];
 
