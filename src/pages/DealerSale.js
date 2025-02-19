@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
-import { Box, TextField, Button, Typography, MenuItem , IconButton} from '@mui/material';
+import { Box, TextField, Button, Typography, MenuItem, IconButton } from '@mui/material';
 import Footer from './footer';
 import CustomAppBar from './customAppbar';
 import { Facebook, X } from '@mui/icons-material'; // Import icons
 import { blueGrey } from '@mui/material/colors';
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const DealerSale = () => {
     const [formData, setFormData] = useState({
@@ -30,41 +35,37 @@ const DealerSale = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:5000/api/sell-cars', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log('Car sale data submitted successfully');
-                alert('Car sale data submitted successfully');
-                setSuccess(true); // Set success to true
-                setFormData({
-                    id: '',
-                    registration_number: '',
-                    make: '',
-                    model: '',
-                    colour: '',
-                    year_of_manufacture: '',
-                    mileage: '',
-                    seller_name: '',
-                    seller_contact_number: '',
-                    dealership_name: '',
-                    sale_price: '',
-                });
-            } else {
-                response.text().then(text => alert(`Failed to submit: ${text}`));
-            }
-        })
-        .catch(error => {
-            console.error('Error submitting car sale data:', error);
-        });
+        try {
+            const { data, error } = await supabase
+                .from('car_sales')
+                .insert([formData]);
+
+            if (error) throw error;
+
+            console.log('Car sale data submitted successfully');
+            alert('Car sale data submitted successfully');
+            setSuccess(true); // Set success to true
+            setFormData({
+                id: '',
+                registration_number: '',
+                make: '',
+                model: '',
+                colour: '',
+                year_of_manufacture: '',
+                mileage: '',
+                seller_name: '',
+                seller_contact_number: '',
+                dealership_name: '',
+                sale_price: '',
+                sale_date: ''
+            });
+        } catch (error) {
+            console.error('Error submitting car sale data:', error.message);
+            alert(`Failed to submit: ${error.message}`);
+        }
     };
 
     return (
@@ -87,14 +88,13 @@ const DealerSale = () => {
             
            {success && <Typography variant="h5" color="green">Your listing has been submitted successfully! 🎉</Typography>}
 
-
             {/* Social Media Links */}
             <Box sx={{ marginTop: 4, textAlign: 'center' }}>
                 <Typography variant="body2">Share your listing:</Typography>
                 <IconButton aria-label="share on facebook" style={{ color: '#1877F2' }}>
                     <Facebook />
                 </IconButton>
-                <IconButton aria-label="share on twitter style={{ color: '#1DA1F2' }">
+                <IconButton aria-label="share on twitter" style={{ color: '#1DA1F2' }}>
                     <X />
                 </IconButton>
             </Box>

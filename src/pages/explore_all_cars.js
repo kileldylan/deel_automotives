@@ -158,7 +158,7 @@ const ExploreAllcars = () => {
                     <CardMedia
                       component="img"
                       height="200"
-                      image={`${supabaseUrl}/storage/v1/object/public/vehicle-images/${car.image_url}`}
+                      image={car.image_url}
                       alt={car.make}
                     />
                     <CardContent>

@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography, Button, CircularProgress } from '@mui/material';
 import Footer from './footer';
 import CustomAppBar from './customAppbar';
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const CarDetails = () => {
     const { id } = useParams(); // Get the car ID from the URL
@@ -13,11 +18,12 @@ const CarDetails = () => {
         // Function to fetch car details by ID
         const fetchCarById = async () => {
             try {
-                // Update URL to include car ID
-                const response = await fetch(`http://localhost:5000/api/carRoutes/cars/${id}`);
-                if (!response.ok) throw new Error('Failed to fetch car details');
-                
-                const data = await response.json();
+                const { data, error } = await supabase
+                    .from('cars')
+                    .select('*')
+                    .eq('id', id)
+                    .single();
+                if (error) throw error;
                 setCar(data); // Set the car data
                 setLoading(false); // Set loading to false when data is fetched
             } catch (error) {
@@ -28,7 +34,7 @@ const CarDetails = () => {
         fetchCarById(); // Call the fetch function on component mount
     }, [id]);
 
-    if (loading) return <Typography variant="h6">Loading...</Typography>;
+    if (loading) return <CircularProgress />;
     if (!car) return <Typography variant="h6">Car not found</Typography>;
 
     // Function to handle "Call Now" button click
@@ -49,7 +55,7 @@ const CarDetails = () => {
         <Box sx={{ padding: 5, display: 'flex', gap: 5, flexDirection: 'row', backgroundColor: '#f5f5f5' }}>
             <Box
                 component="img"
-                src={`http://localhost:5000${car.image_url}`} // Use the full image URL here
+                src={car.image_url}
                 alt={car.model}
                 sx={{ width: '50%', borderRadius: 2 }}
             />

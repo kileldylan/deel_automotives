@@ -2,22 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { Box, Card, CardContent, CardMedia, Grid, Typography, IconButton } from '@mui/material';
 import CustomAppBar from './customAppbar';
 import Footer from './footer';
-import axios from 'axios';
+import { createClient } from '@supabase/supabase-js';
+
+// Initialize Supabase client
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const AboutPage = () => {
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
-    // Fetch employee data from the backend
+    // Fetch employee data from Supabase
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/employee');
-        setEmployees(response.data);
+        let { data, error } = await supabase.from('employees').select('*');
+        if (error) throw error;
+        setEmployees(data);
       } catch (error) {
         console.error("Error fetching employee data:", error);
       }
     };
-    
+
     fetchEmployees();
   }, []);
 
@@ -41,7 +47,7 @@ const AboutPage = () => {
           To deliver high-quality services that create value for our clients, foster innovation, and support sustainable growth.
         </p>
 
-        <h2 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '20px', fontWeight: 'bold', color: '#00796b' }}>Meat the Team</h2>
+        <h2 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '20px', fontWeight: 'bold', color: '#00796b' }}>Meet the Team</h2>
 
         <Grid container spacing={4}>
           {employees.map((employee) => (
@@ -50,7 +56,7 @@ const AboutPage = () => {
                 <CardMedia
                   component="img"
                   height="250"
-                  image={`http://localhost:5000${employee.imageUrl}`} // Ensure you prepend the base URL
+                  image={employee.imageurl} // Ensure the image URL is correctly stored in Supabase
                   alt={employee.name}
                 />
                 <CardContent>
