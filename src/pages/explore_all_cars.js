@@ -19,8 +19,8 @@ import Footer from './footer';
 import CustomAppBar from './customAppbar';
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = "https://tdtzcqcbvltuswhwkszo.supabase.co";
-const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRkdHpjcWNidmx0dXN3aHdrc3pvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk4ODc5MzAsImV4cCI6MjA1NTQ2MzkzMH0.FsZIkjtvHYzY8xH55_-wFSu1YxYp4Q7-RGVOTnhPwUU";
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const ExploreAllcars = () => {
