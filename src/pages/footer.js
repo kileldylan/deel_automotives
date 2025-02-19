@@ -143,7 +143,7 @@ const Footer = () => {
                     backgroundColor: '#00352a',
                 }}
             >
-                © {new Date().getFullYear()} Wahome Automotive. All rights
+                © {new Date().getFullYear()} Deel Automotive. All rights
                 reserved.
             </Typography>
         </Box>

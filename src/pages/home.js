@@ -96,13 +96,13 @@ const Home = () => {
       <CustomAppBar />
       <Box sx={{ backgroundColor: '#e0f7fa', padding: 3, textAlign: 'center' }}>
         <Typography variant="h4" sx={{ color: '#00796b', fontWeight: 'bold', fontFamily: 'Roboto, sans-serif' }}>
-          Welcome to Wahome Automotive!
+          Welcome to Deel Automotive!
         </Typography>
         <Typography variant="h6" sx={{ color: '#004d40', fontFamily: 'Roboto, sans-serif', mt: 1 }}>
           Discover premium vehicles and unmatched quality – because you deserve the best on the road.
         </Typography>
         <Typography variant="body1" sx={{ color: '#00695c', mt: 2, fontFamily: 'Arial, sans-serif' }}>
-          Located at the heart of Mombasa City, 123 Mikindani St, we’re here to bring you closer to your dream ride.
+          Located at the heart of Thika Town, 123 Oginga St, we’re here to bring you closer to your dream ride.
         </Typography>
         <Typography variant="body1" sx={{ color: '#00796b', mt: 1, fontFamily: 'Arial, sans-serif' }}>
           Have questions?{' '}

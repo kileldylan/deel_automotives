@@ -23,9 +23,9 @@ const Contact = () => {
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Typography variant="h6" sx={{ mb: 2, color: '#004d40' }}>Contact Details</Typography>
-                        <Typography variant="body1"><strong>Email:</strong> ianwahome@gmail.com</Typography>
-                        <Typography variant="body1"><strong>Phone:</strong> +254 726 822613 </Typography>
-                        <Typography variant="body1"><strong>Address:</strong> Mikindani St, Mombasa, Kenya</Typography>
+                        <Typography variant="body1"><strong>Email:</strong> kileldylan@gmail.com</Typography>
+                        <Typography variant="body1"><strong>Phone:</strong> +254 758715788 </Typography>
+                        <Typography variant="body1"><strong>Address:</strong>Thika, Kiambu, Kenya</Typography>
                     </Grid>
                 </Grid>
             </Box>

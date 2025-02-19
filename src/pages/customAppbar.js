@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Box, Button, Menu, MenuItem } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Link } from 'react-router-dom';
-import logo from '../images/wahome_logo.jpg';
+import logo from '../images/deel_logo.png';
 
 const CustomAppBar = () => {
     const [exploreAnchorEl, setExploreAnchorEl] = useState(null);
