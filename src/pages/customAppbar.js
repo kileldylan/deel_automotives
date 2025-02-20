@@ -1,4 +1,3 @@
-// components/CustomAppBar.js
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Box, Button, Menu, MenuItem } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -13,18 +12,18 @@ const CustomAppBar = () => {
 
     return (
         <AppBar position="static" sx={{ backgroundColor: '#ffffff', margin: 0, padding: 0 }}>
-            <Toolbar sx={{ minHeight: 48, padding: '0 16px' }}>
+            <Toolbar sx={{ minHeight: 48, padding: { xs: '0 8px', sm: '0 16px' } }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', mr: 'auto' }}>
-                <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-                    <img
-                        src={logo}
-                        alt="Logo"
-                        style={{ height: '120px', objectFit: 'contain', maxWidth: '190px' }}
-                    />
+                    <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+                        <img
+                            src={logo}
+                            alt="Logo"
+                            style={{ height: '80px', objectFit: 'contain', maxWidth: '150px' }}
+                        />
                     </Link>
                 </Box>
 
-                <Box sx={{ display: 'flex', gap: 1, ml: 'auto' }}>
+                <Box sx={{ display: 'flex', gap: { xs: 0.5, sm: 1 }, ml: 'auto', flexWrap: 'wrap' }}>
                     <Button sx={{ color: '#004d40' }} onClick={handleExploreOpen} endIcon={<ArrowDropDownIcon />}>
                         Explore Cars
                     </Button>
