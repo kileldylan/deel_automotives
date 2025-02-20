@@ -7,7 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 const FAQ = () => {
     const faqs = [
         {
-            question: "What services does Wahome Automotive provide?",
+            question: "What services does Deel Automotive provide?",
             answer: "Deel Automotive specializes in vehicle repairs, maintenance services, and diagnostics for various car models. We also offer parts replacement and customization services."
         },
         {
