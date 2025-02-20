@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Container, Typography, Grid, Card, CardContent, CardMedia, CircularProgress } from '@mui/material';
 import Footer from './footer'; // Assuming you have a Footer component
 import CustomAppBar from './customAppbar';
@@ -8,7 +9,8 @@ const ExploreSUV = () => {
   const [carData, setCarData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     const fetchCarData = async () => {
       try {
@@ -26,6 +28,10 @@ const ExploreSUV = () => {
     fetchCarData();
   }, []);
 
+  const handleCardClick = (id) => {
+    navigate(`/carRoutes/cars/${id}`);
+  };
+
   if (loading) return <CircularProgress />;
   if (error) return <Typography color="error">{error}</Typography>;
 
@@ -37,7 +43,7 @@ const ExploreSUV = () => {
         <Grid container spacing={4}>
           {carData.map(car => (
             <Grid item xs={12} sm={6} md={4} key={car.id}>
-              <Card>
+              <Card sx={{ width: 300, cursor: 'pointer' }} onClick={() => handleCardClick(car.id)}>
                 <CardMedia
                   component="img"
                   height="200"
