@@ -39,7 +39,7 @@ const CarDetails = () => {
 
     // Function to handle "Call Now" button click
     const handleCallNow = () => {
-        window.location.href = `tel:+1234567890`; // Replace with actual contact number
+        window.location.href = `tel:+254758715788`; // Replace with actual contact number
     };
 
     // Function to handle "Enquire via WhatsApp" button click
