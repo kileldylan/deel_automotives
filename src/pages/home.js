@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Container, Box, TextField, IconButton, Typography, Button, Grid, Card, CardMedia, CardContent } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import StarIcon from '@mui/icons-material/Star';
@@ -10,7 +11,8 @@ const Home = () => {
   const [priceFilter, setPriceFilter] = useState('');
   const [filteredCars, setFilteredCars] = useState([]);
   const [displayCount, setDisplayCount] = useState(6);
-
+  const navigate = useNavigate();
+  
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     // Implement search logic here
