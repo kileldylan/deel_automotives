@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
 
                 <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold' }}>1. Introduction</Typography>
                 <Typography paragraph>
-                    Wahome Automotive is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this policy carefully to understand our practices regarding your information.
+                    Deel Automotive is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this policy carefully to understand our practices regarding your information.
                 </Typography>
 
                 <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold' }}>2. Information We Collect</Typography>
@@ -65,12 +65,12 @@ const PrivacyPolicy = () => {
 
                 <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold' }}>7. Changes to This Privacy Policy</Typography>
                 <Typography paragraph>
-                    Wahome Automotive reserves the right to update this Privacy Policy. We will notify you of any changes by posting the new policy on our website. Your continued use of our services after changes indicates your acceptance of the updated policy.
+                    Deel Automotive reserves the right to update this Privacy Policy. We will notify you of any changes by posting the new policy on our website. Your continued use of our services after changes indicates your acceptance of the updated policy.
                 </Typography>
 
                 <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold' }}>8. Contact Us</Typography>
                 <Typography paragraph>
-                    If you have any questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:support@wahomeautomotive.com">support@wahomeautomotive.com</a>.
+                    If you have any questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:support@deelautomotive.com">support@deelautomotive.com</a>.
                 </Typography>
             </Box>
             <Footer />

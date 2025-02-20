@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   Typography,
   Container,
@@ -32,7 +32,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [displayCount, setDisplayCount] = useState(12);
   const availableCarsRef = useRef(null);
-
+  const navigate = useNavigate();
   const fetchCarData = async () => {
     try {
       const { data, error } = await supabase.from('cars').select('*');
@@ -85,6 +85,10 @@ const Home = () => {
     }
   };
   
+  const handleCardClick = (id) => {
+    navigate(`/carRoutes/cars/${id}`);
+  };
+
   const handleSearchSubmit = (event) => {
     event.preventDefault();
   };
@@ -166,20 +170,28 @@ const Home = () => {
       {/* Search and Filter */}
       <Container sx={{ marginTop: 3, textAlign: 'center' }}>
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <form onSubmit={handleSearchSubmit}>
+         <form onSubmit={handleSearchSubmit}>
             <TextField
-              variant="outlined"
-              placeholder="Search for by car name..."
-              sx={{ width: '600px', marginRight: 1 }}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              InputProps={{
-                endAdornment: (
-                  <IconButton type="submit">
-                    <SearchIcon />
-                  </IconButton>
-                ),
-              }}
+                variant="outlined"
+                placeholder="Search for by car name..."
+                sx={{
+                    width: {
+                        xs: '100%', // Full width on extra small screens
+                        sm: '400px', // 400px width on small screens
+                        md: '600px', // 600px width on medium screens and above
+                    },
+                    marginRight: { xs: 0, sm: 1 }, // No margin on extra small screens
+                    marginBottom: { xs: 2, sm: 0 }, // Add margin bottom on extra small screens
+                }}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                InputProps={{
+                    endAdornment: (
+                        <IconButton type="submit">
+                            <SearchIcon />
+                        </IconButton>
+                    ),
+                }}
             />
           </form>
         </Box>
@@ -205,8 +217,7 @@ const Home = () => {
         <Grid container spacing={4}>
           {filteredCars.slice(0, displayCount).map((car) => (
             <Grid item xs={12} sm={6} md={4} key={car.id}>
-              <Card>
-                <CardMedia
+              <Card sx={{ width: 300, cursor: 'pointer' }} onClick={() => handleCardClick(car.id)}>                <CardMedia
                   component="img"
                   height="140"
                   image={car.image_url} 

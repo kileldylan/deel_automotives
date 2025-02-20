@@ -51,31 +51,31 @@ const CarDetails = () => {
     // Render car details
     return (
         <>
-        <CustomAppBar/>
-        <Box sx={{ padding: 5, display: 'flex', gap: 5, flexDirection: 'row', backgroundColor: '#f5f5f5' }}>
-            <Box
-                component="img"
-                src={car.image_url}
-                alt={car.model}
-                sx={{ width: '50%', borderRadius: 2 }}
-            />
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#004d40' }}>{car.make} {car.model}</Typography>
-                <Typography variant="h6">Year: {car.year}</Typography>
-                <Typography variant="h6">Price: {car.price}</Typography>
-                <Typography variant="body1">{car.description}</Typography>
+            <CustomAppBar />
+            <Box sx={{ padding: { xs: 2, sm: 5 }, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 5, backgroundColor: '#f5f5f5' }}>
+                <Box
+                    component="img"
+                    src={car.image_url}
+                    alt={car.model}
+                    sx={{ width: { xs: '100%', md: '50%' }, borderRadius: 2 }}
+                />
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                    <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#004d40' }}>{car.make} {car.model}</Typography>
+                    <Typography variant="h6">Year: {car.year}</Typography>
+                    <Typography variant="h6">Price: {car.price}</Typography>
+                    <Typography variant="body1">{car.description}</Typography>
 
-                <Box sx={{ display: 'flex', gap: 2, marginTop: 3 }}>
-                    <Button variant="contained" color="primary" onClick={handleCallNow}>
-                        Call Now
-                    </Button>
-                    <Button variant="contained" color="success" onClick={handleWhatsAppEnquiry}>
-                        Enquire via WhatsApp
-                    </Button>
+                    <Box sx={{ display: 'flex', gap: 2, marginTop: 3, flexWrap: 'wrap' }}>
+                        <Button variant="contained" color="primary" onClick={handleCallNow}>
+                            Call Now
+                        </Button>
+                        <Button variant="contained" color="success" onClick={handleWhatsAppEnquiry}>
+                            Enquire via WhatsApp
+                        </Button>
+                    </Box>
                 </Box>
             </Box>
-        </Box>
-        <Footer/>
+            <Footer />
         </>
     );
 };
