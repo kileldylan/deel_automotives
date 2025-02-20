@@ -32,7 +32,7 @@ function CarsPage() {
     return (
         <Container maxWidth="lg" sx={{ mt: 5 }}>
             <Typography variant="h4" gutterBottom align="center">
-                Vehicle Inventory
+                Vehicle Inventory Page
             </Typography>
 
             {loading && <CircularProgress sx={{ display: "block", margin: "20px auto" }} />}
