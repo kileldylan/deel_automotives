@@ -12,7 +12,7 @@ const FAQ = () => {
         },
         {
             question: "How can I schedule a service appointment?",
-            answer: "You can schedule an appointment through our website or by calling our service center directly at +123 456 7890."
+            answer: "You can schedule an appointment through our website or by calling our service center directly at +254 758715788."
         },
         {
             question: "Do you offer warranties on your services?",
