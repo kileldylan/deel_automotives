@@ -8,7 +8,7 @@ const FAQ = () => {
     const faqs = [
         {
             question: "What services does Wahome Automotive provide?",
-            answer: "Wahome Automotive specializes in vehicle repairs, maintenance services, and diagnostics for various car models. We also offer parts replacement and customization services."
+            answer: "Deel Automotive specializes in vehicle repairs, maintenance services, and diagnostics for various car models. We also offer parts replacement and customization services."
         },
         {
             question: "How can I schedule a service appointment?",
