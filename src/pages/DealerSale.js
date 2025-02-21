@@ -37,17 +37,31 @@ const DealerSale = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
+        const cleanedData = {
+            registration_number: formData.registration_number,
+            make: formData.make,
+            model: formData.model,
+            colour: formData.colour,
+            year_of_manufacture: formData.year_of_manufacture ? parseInt(formData.year_of_manufacture) : null,
+            mileage: formData.mileage ? parseInt(formData.mileage) : null,
+            seller_name: formData.seller_name,
+            seller_contact_number: formData.seller_contact_number,
+            dealership_name: formData.dealership_name || null,
+            sale_price: formData.sale_price ? parseFloat(formData.sale_price) : null,
+            sale_date: formData.sale_date || null
+        };
+    
         try {
             const { data, error } = await supabase
                 .from('car_sales')
-                .insert([formData]);
-
+                .insert([cleanedData]);
+    
             if (error) throw error;
-
+    
             console.log('Car sale data submitted successfully');
             alert('Car sale data submitted successfully');
-            setSuccess(true); // Set success to true
+            setSuccess(true);
             setFormData({
                 id: '',
                 registration_number: '',
@@ -67,6 +81,7 @@ const DealerSale = () => {
             alert(`Failed to submit: ${error.message}`);
         }
     };
+    
 
     return (
         <>
